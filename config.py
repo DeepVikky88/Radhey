@@ -29,10 +29,6 @@ ASSUSERNAME = getenv("ASSUSERNAME")
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 #---------------------------------------------------------------
 
-# Vars For API End Pont.
-YTPROXY_URL = getenv("YTPROXY_URL", 'https://tubed.okflix.top') ## E.G https://yt.okflix.
-YT_API_KEY = "freekey15052025"
-
 #---------------------------------------------------------------
 
 # ----------------------------------------------------------------
