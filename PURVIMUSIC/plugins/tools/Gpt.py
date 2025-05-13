@@ -5,9 +5,9 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.enums import ChatAction, ParseMode
 from pyrogram import filters
 
-API_KEY = "abacf43bf0ef13f467283e5bc03c2e1f29dae4228e8c612d785ad428b32db6ce"
+API_KEY = "AIzaSyCdj8Mao0nFV7tcRMqwneMStcSEP4HTldU"
 
-BASE_URL = "https://api.together.xyz/v1/chat/completions"
+BASE_URL = "https://makersuite.google.com/app/apikey"
 
 @app.on_message(
     filters.command(
