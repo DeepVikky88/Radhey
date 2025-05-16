@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 from aiofiles.os import path as aiopath
 from youtubesearchpython.__future__ import VideosSearch
 
-from PURVIMUSIC.logger import LOGGER
+from PURVIMUSIC import LOGGER
 
 # Load fonts with error handling
 def load_fonts():
