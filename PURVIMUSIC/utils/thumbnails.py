@@ -89,14 +89,14 @@ def clean_text(text: str, limit: int = 25) -> str:
     return f"{text[:limit - 3]}..." if len(text) > limit else text
 
 async def add_controls(img: Image.Image) -> Image.Image:
-    img = img.filter(ImageFilter.GaussianBlur(radius=15))
+    img = img.filter(ImageFilter.GaussianBlur(radius=10))
     box = (305, 125, 975, 595)
     region = img.crop(box)
     try:
         controls = Image.open("PURVIMUSIC/assets/controls.png").convert("RGBA")
         controls = controls.resize((1200, 320), Image.Resampling.LANCZOS)
-        controls = ImageEnhance.Sharpness(controls).enhance(2.0)
-        controls = ImageEnhance.Contrast(controls).enhance(1.3)
+        controls = ImageEnhance.Sharpness(controls).enhance(5.0)
+        controls = ImageEnhance.Contrast(controls).enhance(1.0)
         controls = controls.resize((600, 160), Image.Resampling.LANCZOS)
         controls_x = 305 + (670 - 600) // 2 
         controls_y = 415  
@@ -106,7 +106,7 @@ async def add_controls(img: Image.Image) -> Image.Image:
         controls_x, controls_y = 335, 415
 
 
-    dark_region = ImageEnhance.Brightness(region).enhance(0.4)
+    dark_region = ImageEnhance.Brightness(region).enhance(0.5)
     mask = Image.new("L", dark_region.size, 0)
     ImageDraw.Draw(mask).rounded_rectangle(
         (0, 0, box[2] - box[0], box[3] - box[1]), radius=20, fill=255
@@ -199,4 +199,3 @@ async def get_thumb(videoid: str) -> str:
     image.close()
     bg.close()
     return ""
-    
