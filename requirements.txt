@@ -57,4 +57,4 @@ cloudscraper
 pycryptodome
 opencv-python
 bing_image_downloader
-
+git+https://github.com/Badmunda50/Pyroi
